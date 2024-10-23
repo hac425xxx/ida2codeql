@@ -1,0 +1,50 @@
+# editor and OS artifacts
+*~
+.DS_STORE
+*.swp
+
+# query compilation caches
+.cache
+
+# qltest projects and artifacts
+*/ql/test/**/*.testproj
+*/ql/test/**/*.actual
+*/ql/test/**/go.sum
+
+# Visual studio temporaries, except a file used by QL4VS
+.vs/*
+!.vs/VSWorkspaceSettings.json
+
+# Byte-compiled python files
+*.pyc
+
+# python virtual environment folder
+.venv/
+
+# binary files created by pytest-cov
+.coverage
+
+# It's useful (though not required) to be able to unpack codeql in the ql checkout itself
+/codeql/
+
+# Avoid committing cached package components
+.codeql
+
+# Compiled class file
+*.class
+
+# links created by bazel
+/bazel-*
+
+# local bazel options
+/local.bazelrc
+
+# generated cmake directory
+/.bazel-cmake
+
+# CLion project files
+/.clwb
+
+# Go build artifacts
+build/*
+

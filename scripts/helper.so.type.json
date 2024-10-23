@@ -1,0 +1,236 @@
+[
+    {
+        "name": "int",
+        "type": "Int"
+    },
+    {
+        "name": "void",
+        "type": "Void"
+    },
+    {
+        "name": "void *",
+        "type": "Pointer",
+        "pointed_type": "void"
+    },
+    {
+        "name": "int __fastcall(void *)",
+        "type": "Int"
+    },
+    {
+        "name": "int (__fastcall *)(void *)",
+        "type": "Pointer",
+        "pointed_type": "int __fastcall(void *)"
+    },
+    {
+        "name": "char",
+        "type": "Int"
+    },
+    {
+        "name": "char *",
+        "type": "Pointer",
+        "pointed_type": "char"
+    },
+    {
+        "name": "__int64",
+        "type": "Int"
+    },
+    {
+        "name": "bool",
+        "type": "Int"
+    },
+    {
+        "name": "int (__fastcall **)(void *)",
+        "type": "Pointer",
+        "pointed_type": "int (__fastcall *)(void *)"
+    },
+    {
+        "name": "char *()",
+        "type": "Int"
+    },
+    {
+        "name": "char *(*)()",
+        "type": "Pointer",
+        "pointed_type": "char *()"
+    },
+    {
+        "name": "__int64(void)",
+        "type": "Int"
+    },
+    {
+        "name": "__int64 (*)(void)",
+        "type": "Pointer",
+        "pointed_type": "__int64(void)"
+    },
+    {
+        "name": "int *",
+        "type": "Pointer",
+        "pointed_type": "int"
+    },
+    {
+        "name": "unsigned __int32",
+        "type": "Int"
+    },
+    {
+        "name": "unsigned __int8",
+        "type": "Int"
+    },
+    {
+        "name": "unsigned __int16",
+        "type": "Int"
+    },
+    {
+        "name": "unsigned __int64",
+        "type": "Int"
+    },
+    {
+        "name": "Elf64_Sym",
+        "type": "Struct",
+        "members": [
+            {
+                "name": "st_name",
+                "type": {
+                    "name": "unsigned __int32",
+                    "type": "Int"
+                }
+            },
+            {
+                "name": "st_info",
+                "type": {
+                    "name": "unsigned __int8",
+                    "type": "Int"
+                }
+            },
+            {
+                "name": "st_other",
+                "type": {
+                    "name": "unsigned __int8",
+                    "type": "Int"
+                }
+            },
+            {
+                "name": "st_shndx",
+                "type": {
+                    "name": "unsigned __int16",
+                    "type": "Int"
+                }
+            },
+            {
+                "name": "st_value",
+                "type": {
+                    "name": "unsigned __int64",
+                    "type": "Int"
+                }
+            },
+            {
+                "name": "st_size",
+                "type": {
+                    "name": "unsigned __int64",
+                    "type": "Int"
+                }
+            }
+        ]
+    },
+    {
+        "name": "Elf64_Rela",
+        "type": "Struct",
+        "members": [
+            {
+                "name": "r_offset",
+                "type": {
+                    "name": "unsigned __int64",
+                    "type": "Int"
+                }
+            },
+            {
+                "name": "r_info",
+                "type": {
+                    "name": "unsigned __int64",
+                    "type": "Int"
+                }
+            },
+            {
+                "name": "r_addend",
+                "type": {
+                    "name": "__int64",
+                    "type": "Int"
+                }
+            }
+        ]
+    },
+    {
+        "name": "Elf64_Dyn",
+        "type": "Struct",
+        "members": [
+            {
+                "name": "d_tag",
+                "type": {
+                    "name": "unsigned __int64",
+                    "type": "Int"
+                }
+            },
+            {
+                "name": "d_un",
+                "type": {
+                    "name": "unsigned __int64",
+                    "type": "Int"
+                }
+            }
+        ]
+    },
+    {
+        "type": "function_signature",
+        "name": "(void *);(int);signaturetype",
+        "function_name": "__imp___cxa_finalize",
+        "param_types": [
+            "void *"
+        ],
+        "ret_type": "int"
+    },
+    {
+        "type": "function_signature",
+        "name": "(void *);(void);signaturetype",
+        "function_name": "__cxa_finalize",
+        "param_types": [
+            "void *"
+        ],
+        "ret_type": "void"
+    },
+    {
+        "type": "function_signature",
+        "name": ";(char *);signaturetype",
+        "function_name": "deregister_tm_clones",
+        "param_types": [],
+        "ret_type": "char *"
+    },
+    {
+        "type": "function_signature",
+        "name": ";(__int64);signaturetype",
+        "function_name": "register_tm_clones",
+        "param_types": [],
+        "ret_type": "__int64"
+    },
+    {
+        "type": "function_signature",
+        "name": ";(char *);signaturetype",
+        "function_name": "__do_global_dtors_aux",
+        "param_types": [],
+        "ret_type": "char *"
+    },
+    {
+        "type": "function_signature",
+        "name": ";(__int64);signaturetype",
+        "function_name": "frame_dummy",
+        "param_types": [],
+        "ret_type": "__int64"
+    },
+    {
+        "type": "function_signature",
+        "name": "(int *),(int);(int);signaturetype",
+        "function_name": "ida2codeql_assign_helper",
+        "param_types": [
+            "int *",
+            "int"
+        ],
+        "ret_type": "int"
+    }
+]
