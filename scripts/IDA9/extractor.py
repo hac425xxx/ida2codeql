@@ -1,6 +1,8 @@
+import idapro
 import json
 import os
 import shutil
+import sys
 
 import ida_lines
 import ida_pro
@@ -674,6 +676,7 @@ class IdaTypeResolver:
         tif = ida_typeinf.tinfo_t()
         if not tif.get_named_type(til, name, t, True, False):
             print(f"'{name}' is not a structure")
+            pass
         else:
             if tif.is_typedef():
                 rtid = ida_typeinf.get_named_type_tid(tif.get_final_type_name())
@@ -683,10 +686,10 @@ class IdaTypeResolver:
             udt = ida_typeinf.udt_type_data_t()
             if tif.get_udt_details(udt):
                 idx = 0
-                print(f'Listing the {name} structure {udt.size()} field names:')
+                # print(f'Listing the {name} structure {udt.size()} field names:')
                 for udm in udt:
                     udm: ida_typeinf.udm_t
-                    print(f'Field {idx}: {udm.name}')
+                    # print(f'Field {idx}: {udm.name}')
                     idx += 1
 
                     m = {
@@ -741,14 +744,14 @@ class IdaTypeResolver:
         elif full_type in [idaapi.BTF_STRUCT, idaapi.BTF_UNION]:
             sid = idc.get_struc_id(typs)
 
-            print("{}: 0x{:x}".format(typs, sid))
+            # print("{}: 0x{:x}".format(typs, sid))
             if sid == idaapi.BADADDR:
                 r = {
                     "name": typs,
                     "type": "Unknown",
                 }
             else:
-                print("parse member of {}".format(typs))
+                # print("parse member of {}".format(typs))
                 r = self.parse_struct(typs, sid, full_type == idaapi.BTF_UNION)
         elif ti.is_ptr():
             pointed = ti.get_pointed_object()
@@ -1378,7 +1381,7 @@ def merge_json_file(type_file, helper_type_json_file):
 
     shutil.move(out, type_file)
 
-    print("[*] merge {}? to {}".format(type_file, out))
+    print("[*] merge {} to {}".format(type_file, out))
 
 
 # https://gist.github.com/NyaMisty/693db2ce2e75c230f36b628fd7610852
@@ -1404,17 +1407,17 @@ def resync_local_types():
             continue
         struc.save_type()
 
-
-if __name__ == "__main__":
+def do_idapython_work():
     print("[*] in astdumper script!")
 
     idc.auto_wait()
+
+    resync_local_types()
+
     need_exit = False
     # print(idc.ARGV)
     if len(idc.ARGV) > 1:
         need_exit = True
-
-    resync_local_types()
 
     funcs = []
     input_file = idaapi.get_input_file_path()
@@ -1473,19 +1476,16 @@ if __name__ == "__main__":
     merge_json_files(outdir, base_name, helper_json)
 
     for x in idautils.Structs():
-        print(x)
-        # for m in idautils.StructMembers(x[1]):
-        #     print(m)
-        tid = x[1]
-        tif = get_tinfo_by_tid(tid)
+
         n = x[2]
+        sid = x[1]
 
         if typeResolver.is_resolved_type(n):
             print("already resolve type: {}".format(n))
             print(typeResolver.resolved_types.get(n))
             continue
 
-        typeResolver.resolved_types[x[2]] = typeResolver.parse_struct(x[2], tid, tif.is_union())
+        typeResolver.resolved_types[n] = typeResolver.parse_struct(n, sid)
 
     type_json_file = os.path.join(outdir, "{}.type.json".format(base_name))
     typeResolver.dump(type_json_file)
@@ -1494,5 +1494,8 @@ if __name__ == "__main__":
 
     print("[*] All Done!")
 
-    if need_exit:
-        idc.qexit(0)
+if __name__ == "__main__":
+    # idapro.enable_console_messages(True)
+    idapro.open_database(sys.argv[1], True)
+    do_idapython_work()
+    idapro.close_database()

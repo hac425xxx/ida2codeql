@@ -11,17 +11,16 @@ except ImportError:
 
 class AnalyseThread(threading.Thread):
 
-    def __init__(self, ida_path, script_path, input_qeueue):
+    def __init__(self, script_path, input_qeueue):
         threading.Thread.__init__(self)
         self.input_qeueue = input_qeueue
-        self.ida_path = ida_path
         self.script_path = os.path.abspath(script_path)
         if not os.path.exists(self.script_path):
             raise Exception("{} don't exit!".format(self.script_path))
 
-    def ida_analyse(self, ida_path, script_path, input_path):
+    def ida_analyse(self, script_path, input_path):
         # print input_path
-        command = '"{}" -A -c -S"{} from_dumper" {}'.format(ida_path, script_path, input_path)
+        command = 'python3 {} {}'.format(script_path, input_path)
         print(command)
         p = subprocess.Popen(command, shell=True, cwd=os.getcwd())
         p.wait()
@@ -36,7 +35,7 @@ class AnalyseThread(threading.Thread):
         while True:
             try:
                 input_path = self.input_qeueue.get_nowait()
-                self.ida_analyse(self.ida_path, self.script_path, input_path)
+                self.ida_analyse(self.script_path, input_path)
             except queue.Empty:
                 break
             except Exception as e:
@@ -46,15 +45,12 @@ class AnalyseThread(threading.Thread):
 
 class IDADumper:
 
-    def __init__(self, ida, ida_sc="ida-ast-dumper.py"):
-        self.ida = ida
-
+    def __init__(self, script):
         cur_dir = os.path.dirname(__file__)
-        ida_sc = os.path.join(cur_dir, ida_sc)
-        self.ida_sc = os.path.abspath(ida_sc)
+        self.script = script = os.path.join(cur_dir, script)
 
-        if not os.path.exists(self.ida_sc):
-            raise Exception("{} don't exist.".format(self.ida_sc))
+        if not os.path.exists(self.script):
+            raise Exception("{} don't exist.".format(self.script))
 
     def is_bad_file(self, fname):
         suffix = [".nam", ".til", ".id0", ".id1", ".id2", ".idb", ".i64", ".json", ".txt", ".c", ".h"]
@@ -69,10 +65,7 @@ class IDADumper:
         return False
 
     def do_dump(self, input_dir, thread_count=4):
-
-        ida_sc = self.ida_sc
         q = queue.Queue()
-
         files = []
 
         for i in os.listdir(input_dir):
@@ -85,7 +78,7 @@ class IDADumper:
 
         ths = []
         for i in range(thread_count):
-            th = AnalyseThread(self.ida, ida_sc, q)
+            th = AnalyseThread(self.script, q)
             th.start()
             ths.append(th)
 
@@ -96,12 +89,9 @@ class IDADumper:
 
 
 if __name__ == "__main__":
-    if len(sys.argv) < 3:
-        print("Usage: {} ida_path <input_dir>".format(sys.argv[0]))
+    if len(sys.argv) < 2:
+        print("Usage: {} <input_dir>".format(sys.argv[0]))
         sys.exit(1)
-
-    ida_path = sys.argv[1]
-    input_dir = sys.argv[2]
-
-    dumper = IDADumper(ida_path)
+    input_dir = sys.argv[1]
+    dumper = IDADumper("extractor.py")
     files = dumper.do_dump(input_dir)

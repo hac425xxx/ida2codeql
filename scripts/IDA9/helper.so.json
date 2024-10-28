@@ -1,0 +1,814 @@
+[
+  {
+    "nodeType": "Function",
+    "attributes": {
+      "ea": "4144",
+      "treeindex": "-1"
+    },
+    "namespacedName": "<global>",
+    "name": "__cxa_finalize",
+    "code": "// attributes: thunk\nint __fastcall _cxa_finalize(void *a1)\n{\n  return __cxa_finalize(a1);\n}",
+    "paramters": [
+      {
+        "nodeType": "Parameter",
+        "attributes": {
+          "ea": "4144",
+          "treeindex": "-1"
+        },
+        "code": "void * a1",
+        "name": "a1",
+        "type": "void *"
+      }
+    ],
+    "localDecls": [],
+    "body": [
+      {
+        "nodeType": "Block",
+        "code": "return __cxa_finalize(a1);",
+        "attributes": {
+          "ea": "268435455",
+          "treeindex": "1"
+        },
+        "stmts": [
+          {
+            "nodeType": "Block",
+            "code": "return __cxa_finalize(a1);",
+            "attributes": {
+              "ea": "268435455",
+              "treeindex": "1"
+            },
+            "stmts": [
+              {
+                "nodeType": "Expression",
+                "code": "ida2cpg_return_val = __cxa_finalize(a1)",
+                "attributes": {
+                  "ea": "268435455",
+                  "treeindex": "-1"
+                },
+                "expr": {
+                  "nodeType": "cot_asg",
+                  "code": "ida2cpg_return_val = __cxa_finalize(a1)",
+                  "attributes": {
+                    "ea": "268435455",
+                    "treeindex": "-1"
+                  },
+                  "left": {
+                    "nodeType": "Identifier",
+                    "code": "ida2cpg_return_val",
+                    "attributes": {
+                      "ea": "268435455",
+                      "treeindex": "-1"
+                    },
+                    "name": "ida2cpg_return_val",
+                    "type": "void *"
+                  },
+                  "right": {
+                    "nodeType": "Call",
+                    "code": "__cxa_finalize(a1)",
+                    "type": "int",
+                    "attributes": {
+                      "ea": "4144",
+                      "treeindex": "2"
+                    },
+                    "name": {
+                      "nodeType": "Identifier",
+                      "code": "__cxa_finalize",
+                      "attributes": {
+                        "ea": "268435455",
+                        "treeindex": "3"
+                      },
+                      "name": "__imp___cxa_finalize",
+                      "type": "int __fastcall(void *)"
+                    },
+                    "args": [
+                      {
+                        "nodeType": "Identifier",
+                        "code": "a1",
+                        "attributes": {
+                          "ea": "268435455",
+                          "treeindex": "4"
+                        },
+                        "name": "a1",
+                        "type": "void *"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "nodeType": "Return",
+                "code": "return ida2cpg_return_val;",
+                "attributes": {
+                  "ea": "268435455",
+                  "treeindex": "-1"
+                },
+                "expr": {
+                  "nodeType": "Identifier",
+                  "code": "ida2cpg_return_val",
+                  "attributes": {
+                    "ea": "268435455",
+                    "treeindex": "-1"
+                  },
+                  "name": "ida2cpg_return_val",
+                  "type": "void *"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "returnType": "int"
+  }
+,  {
+    "nodeType": "Function",
+    "attributes": {
+      "ea": "4160",
+      "treeindex": "-1"
+    },
+    "namespacedName": "<global>",
+    "name": "deregister_tm_clones",
+    "code": "char *deregister_tm_clones()\n{\n  return &completed_0;\n}",
+    "paramters": [],
+    "localDecls": [],
+    "body": [
+      {
+        "nodeType": "Block",
+        "code": "return &completed_0;",
+        "attributes": {
+          "ea": "4200",
+          "treeindex": "1"
+        },
+        "stmts": [
+          {
+            "nodeType": "Block",
+            "code": "return &completed_0;",
+            "attributes": {
+              "ea": "4200",
+              "treeindex": "1"
+            },
+            "stmts": [
+              {
+                "nodeType": "Expression",
+                "code": "ida2cpg_return_val = &completed_0",
+                "attributes": {
+                  "ea": "4200",
+                  "treeindex": "-1"
+                },
+                "expr": {
+                  "nodeType": "cot_asg",
+                  "code": "ida2cpg_return_val = &completed_0",
+                  "attributes": {
+                    "ea": "4200",
+                    "treeindex": "-1"
+                  },
+                  "left": {
+                    "nodeType": "Identifier",
+                    "code": "ida2cpg_return_val",
+                    "attributes": {
+                      "ea": "4200",
+                      "treeindex": "-1"
+                    },
+                    "name": "ida2cpg_return_val",
+                    "type": "void *"
+                  },
+                  "right": {
+                    "nodeType": "cot_ref",
+                    "code": "&completed_0",
+                    "attributes": {
+                      "ea": "268435455",
+                      "treeindex": "2"
+                    },
+                    "expr": {
+                      "nodeType": "Identifier",
+                      "code": "completed_0",
+                      "attributes": {
+                        "ea": "268435455",
+                        "treeindex": "3"
+                      },
+                      "name": "completed.0",
+                      "type": "?"
+                    }
+                  }
+                }
+              },
+              {
+                "nodeType": "Return",
+                "code": "return ida2cpg_return_val;",
+                "attributes": {
+                  "ea": "4200",
+                  "treeindex": "-1"
+                },
+                "expr": {
+                  "nodeType": "Identifier",
+                  "code": "ida2cpg_return_val",
+                  "attributes": {
+                    "ea": "4200",
+                    "treeindex": "-1"
+                  },
+                  "name": "ida2cpg_return_val",
+                  "type": "void *"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "returnType": "char *"
+  }
+,  {
+    "nodeType": "Function",
+    "attributes": {
+      "ea": "4208",
+      "treeindex": "-1"
+    },
+    "namespacedName": "<global>",
+    "name": "register_tm_clones",
+    "code": "__int64 register_tm_clones()\n{\n  return 0LL;\n}",
+    "paramters": [],
+    "localDecls": [],
+    "body": [
+      {
+        "nodeType": "Block",
+        "code": "return 0LL;",
+        "attributes": {
+          "ea": "4264",
+          "treeindex": "1"
+        },
+        "stmts": [
+          {
+            "nodeType": "Block",
+            "code": "return 0LL;",
+            "attributes": {
+              "ea": "4264",
+              "treeindex": "1"
+            },
+            "stmts": [
+              {
+                "nodeType": "Expression",
+                "code": "ida2cpg_return_val = 0LL",
+                "attributes": {
+                  "ea": "4264",
+                  "treeindex": "-1"
+                },
+                "expr": {
+                  "nodeType": "cot_asg",
+                  "code": "ida2cpg_return_val = 0LL",
+                  "attributes": {
+                    "ea": "4264",
+                    "treeindex": "-1"
+                  },
+                  "left": {
+                    "nodeType": "Identifier",
+                    "code": "ida2cpg_return_val",
+                    "attributes": {
+                      "ea": "4264",
+                      "treeindex": "-1"
+                    },
+                    "name": "ida2cpg_return_val",
+                    "type": "void *"
+                  },
+                  "right": {
+                    "nodeType": "Number",
+                    "code": "0LL",
+                    "attributes": {
+                      "ea": "4222",
+                      "treeindex": "2"
+                    },
+                    "value": "0"
+                  }
+                }
+              },
+              {
+                "nodeType": "Return",
+                "code": "return ida2cpg_return_val;",
+                "attributes": {
+                  "ea": "4264",
+                  "treeindex": "-1"
+                },
+                "expr": {
+                  "nodeType": "Identifier",
+                  "code": "ida2cpg_return_val",
+                  "attributes": {
+                    "ea": "4264",
+                    "treeindex": "-1"
+                  },
+                  "name": "ida2cpg_return_val",
+                  "type": "void *"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "returnType": "__int64"
+  }
+,  {
+    "nodeType": "Function",
+    "attributes": {
+      "ea": "4272",
+      "treeindex": "-1"
+    },
+    "namespacedName": "<global>",
+    "name": "__do_global_dtors_aux",
+    "code": "char *_do_global_dtors_aux()\n{\n  char *result; // rax\n\n  if ( !completed_0 )\n  {\n    if ( &__cxa_finalize )\n      _cxa_finalize(_dso_handle);\n    result = deregister_tm_clones();\n    completed_0 = 1;\n  }\n  return result;\n}",
+    "paramters": [],
+    "localDecls": [
+      {
+        "nodeType": "LocalDecl",
+        "attributes": {
+          "ea": "4272",
+          "treeindex": "-1"
+        },
+        "code": "char * result",
+        "name": "result",
+        "type": "char *"
+      }
+    ],
+    "body": [
+      {
+        "nodeType": "Block",
+        "code": "return result;",
+        "attributes": {
+          "ea": "4324",
+          "treeindex": "22"
+        },
+        "stmts": [
+          {
+            "nodeType": "If",
+            "code": "if ( !completed_0 ){if ( &__cxa_finalize )_cxa_finalize(_dso_handle);result = deregister_tm_clones();completed_0 = 1;}",
+            "attributes": {
+              "ea": "4283",
+              "treeindex": "1"
+            },
+            "cond": {
+              "nodeType": "cot_lnot",
+              "code": "!completed_0",
+              "attributes": {
+                "ea": "4283",
+                "treeindex": "20"
+              },
+              "expr": {
+                "nodeType": "Identifier",
+                "code": "completed_0",
+                "attributes": {
+                  "ea": "4283",
+                  "treeindex": "21"
+                },
+                "name": "completed.0",
+                "type": "?"
+              }
+            },
+            "then": [
+              {
+                "nodeType": "Block",
+                "code": "completed_0 = 1;",
+                "attributes": {
+                  "ea": "4316",
+                  "treeindex": "16"
+                },
+                "stmts": [
+                  {
+                    "nodeType": "If",
+                    "code": "if ( &__cxa_finalize )_cxa_finalize(_dso_handle);",
+                    "attributes": {
+                      "ea": "4297",
+                      "treeindex": "3"
+                    },
+                    "cond": {
+                      "nodeType": "cot_ref",
+                      "code": "&__cxa_finalize",
+                      "attributes": {
+                        "ea": "4297",
+                        "treeindex": "9"
+                      },
+                      "expr": {
+                        "nodeType": "Identifier",
+                        "code": "__cxa_finalize",
+                        "attributes": {
+                          "ea": "4297",
+                          "treeindex": "10"
+                        },
+                        "name": "__imp___cxa_finalize",
+                        "type": "int __fastcall(void *)"
+                      }
+                    },
+                    "then": [
+                      {
+                        "nodeType": "Block",
+                        "code": "_cxa_finalize(_dso_handle);",
+                        "attributes": {
+                          "ea": "4306",
+                          "treeindex": "5"
+                        },
+                        "stmts": [
+                          {
+                            "nodeType": "Expression",
+                            "code": "_cxa_finalize(_dso_handle);",
+                            "attributes": {
+                              "ea": "4306",
+                              "treeindex": "5"
+                            },
+                            "expr": {
+                              "nodeType": "Call",
+                              "code": "_cxa_finalize(_dso_handle)",
+                              "type": "void",
+                              "attributes": {
+                                "ea": "4306",
+                                "treeindex": "6"
+                              },
+                              "name": {
+                                "nodeType": "Identifier",
+                                "code": "_cxa_finalize",
+                                "attributes": {
+                                  "ea": "268435455",
+                                  "treeindex": "7"
+                                },
+                                "name": "__cxa_finalize",
+                                "type": "int __fastcall(void *)"
+                              },
+                              "args": [
+                                {
+                                  "nodeType": "Identifier",
+                                  "code": "_dso_handle",
+                                  "attributes": {
+                                    "ea": "4299",
+                                    "treeindex": "8"
+                                  },
+                                  "name": "__dso_handle",
+                                  "type": "void *"
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    ],
+                    "else": null
+                  },
+                  {
+                    "nodeType": "Expression",
+                    "code": "result = deregister_tm_clones();",
+                    "attributes": {
+                      "ea": "4311",
+                      "treeindex": "11"
+                    },
+                    "expr": {
+                      "nodeType": "cot_asg",
+                      "code": "result = deregister_tm_clones()",
+                      "attributes": {
+                        "ea": "4311",
+                        "treeindex": "12"
+                      },
+                      "left": {
+                        "nodeType": "Identifier",
+                        "code": "result",
+                        "attributes": {
+                          "ea": "268435455",
+                          "treeindex": "13"
+                        },
+                        "name": "result",
+                        "type": "char *"
+                      },
+                      "right": {
+                        "nodeType": "Call",
+                        "code": "deregister_tm_clones()",
+                        "type": "char *",
+                        "attributes": {
+                          "ea": "4311",
+                          "treeindex": "14"
+                        },
+                        "name": {
+                          "nodeType": "Identifier",
+                          "code": "deregister_tm_clones",
+                          "attributes": {
+                            "ea": "268435455",
+                            "treeindex": "15"
+                          },
+                          "name": "deregister_tm_clones",
+                          "type": "char *()"
+                        },
+                        "args": []
+                      }
+                    }
+                  },
+                  {
+                    "nodeType": "Expression",
+                    "code": "completed_0 = 1;",
+                    "attributes": {
+                      "ea": "4316",
+                      "treeindex": "16"
+                    },
+                    "expr": {
+                      "nodeType": "cot_asg",
+                      "code": "completed_0 = 1",
+                      "attributes": {
+                        "ea": "4316",
+                        "treeindex": "17"
+                      },
+                      "left": {
+                        "nodeType": "Identifier",
+                        "code": "completed_0",
+                        "attributes": {
+                          "ea": "268435455",
+                          "treeindex": "18"
+                        },
+                        "name": "completed.0",
+                        "type": "?"
+                      },
+                      "right": {
+                        "nodeType": "Number",
+                        "code": "1",
+                        "attributes": {
+                          "ea": "4316",
+                          "treeindex": "19"
+                        },
+                        "value": "1"
+                      }
+                    }
+                  }
+                ]
+              }
+            ],
+            "else": null
+          },
+          {
+            "nodeType": "Block",
+            "code": "return result;",
+            "attributes": {
+              "ea": "4324",
+              "treeindex": "22"
+            },
+            "stmts": [
+              {
+                "nodeType": "Expression",
+                "code": "ida2cpg_return_val = result",
+                "attributes": {
+                  "ea": "4324",
+                  "treeindex": "-1"
+                },
+                "expr": {
+                  "nodeType": "cot_asg",
+                  "code": "ida2cpg_return_val = result",
+                  "attributes": {
+                    "ea": "4324",
+                    "treeindex": "-1"
+                  },
+                  "left": {
+                    "nodeType": "Identifier",
+                    "code": "ida2cpg_return_val",
+                    "attributes": {
+                      "ea": "4324",
+                      "treeindex": "-1"
+                    },
+                    "name": "ida2cpg_return_val",
+                    "type": "void *"
+                  },
+                  "right": {
+                    "nodeType": "Identifier",
+                    "code": "result",
+                    "attributes": {
+                      "ea": "268435455",
+                      "treeindex": "23"
+                    },
+                    "name": "result",
+                    "type": "char *"
+                  }
+                }
+              },
+              {
+                "nodeType": "Return",
+                "code": "return ida2cpg_return_val;",
+                "attributes": {
+                  "ea": "4324",
+                  "treeindex": "-1"
+                },
+                "expr": {
+                  "nodeType": "Identifier",
+                  "code": "ida2cpg_return_val",
+                  "attributes": {
+                    "ea": "4324",
+                    "treeindex": "-1"
+                  },
+                  "name": "ida2cpg_return_val",
+                  "type": "void *"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "returnType": "char *"
+  }
+,  {
+    "nodeType": "Function",
+    "attributes": {
+      "ea": "4336",
+      "treeindex": "-1"
+    },
+    "namespacedName": "<global>",
+    "name": "frame_dummy",
+    "code": "__int64 frame_dummy()\n{\n  return register_tm_clones();\n}",
+    "paramters": [],
+    "localDecls": [],
+    "body": [
+      {
+        "nodeType": "Block",
+        "code": "return register_tm_clones();",
+        "attributes": {
+          "ea": "268435455",
+          "treeindex": "1"
+        },
+        "stmts": [
+          {
+            "nodeType": "Block",
+            "code": "return register_tm_clones();",
+            "attributes": {
+              "ea": "268435455",
+              "treeindex": "1"
+            },
+            "stmts": [
+              {
+                "nodeType": "Expression",
+                "code": "ida2cpg_return_val = register_tm_clones()",
+                "attributes": {
+                  "ea": "268435455",
+                  "treeindex": "-1"
+                },
+                "expr": {
+                  "nodeType": "cot_asg",
+                  "code": "ida2cpg_return_val = register_tm_clones()",
+                  "attributes": {
+                    "ea": "268435455",
+                    "treeindex": "-1"
+                  },
+                  "left": {
+                    "nodeType": "Identifier",
+                    "code": "ida2cpg_return_val",
+                    "attributes": {
+                      "ea": "268435455",
+                      "treeindex": "-1"
+                    },
+                    "name": "ida2cpg_return_val",
+                    "type": "void *"
+                  },
+                  "right": {
+                    "nodeType": "Call",
+                    "code": "register_tm_clones()",
+                    "type": "__int64",
+                    "attributes": {
+                      "ea": "4340",
+                      "treeindex": "2"
+                    },
+                    "name": {
+                      "nodeType": "Identifier",
+                      "code": "register_tm_clones",
+                      "attributes": {
+                        "ea": "268435455",
+                        "treeindex": "3"
+                      },
+                      "name": "register_tm_clones",
+                      "type": "__int64(void)"
+                    },
+                    "args": []
+                  }
+                }
+              },
+              {
+                "nodeType": "Return",
+                "code": "return ida2cpg_return_val;",
+                "attributes": {
+                  "ea": "268435455",
+                  "treeindex": "-1"
+                },
+                "expr": {
+                  "nodeType": "Identifier",
+                  "code": "ida2cpg_return_val",
+                  "attributes": {
+                    "ea": "268435455",
+                    "treeindex": "-1"
+                  },
+                  "name": "ida2cpg_return_val",
+                  "type": "void *"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "returnType": "__int64"
+  }
+,  {
+    "nodeType": "Function",
+    "attributes": {
+      "ea": "4345",
+      "treeindex": "-1"
+    },
+    "namespacedName": "<global>",
+    "name": "ida2codeql_assign_helper",
+    "code": "int __cdecl ida2codeql_assign_helper(int *left, int right)\n{\n  return 0;\n}",
+    "paramters": [
+      {
+        "nodeType": "Parameter",
+        "attributes": {
+          "ea": "4345",
+          "treeindex": "-1"
+        },
+        "code": "int * left",
+        "name": "left",
+        "type": "int *"
+      },
+      {
+        "nodeType": "Parameter",
+        "attributes": {
+          "ea": "4345",
+          "treeindex": "-1"
+        },
+        "code": "int right",
+        "name": "right",
+        "type": "int"
+      }
+    ],
+    "localDecls": [],
+    "body": [
+      {
+        "nodeType": "Block",
+        "code": "return 0;",
+        "attributes": {
+          "ea": "4361",
+          "treeindex": "1"
+        },
+        "stmts": [
+          {
+            "nodeType": "Block",
+            "code": "return 0;",
+            "attributes": {
+              "ea": "4361",
+              "treeindex": "1"
+            },
+            "stmts": [
+              {
+                "nodeType": "Expression",
+                "code": "ida2cpg_return_val = 0",
+                "attributes": {
+                  "ea": "4361",
+                  "treeindex": "-1"
+                },
+                "expr": {
+                  "nodeType": "cot_asg",
+                  "code": "ida2cpg_return_val = 0",
+                  "attributes": {
+                    "ea": "4361",
+                    "treeindex": "-1"
+                  },
+                  "left": {
+                    "nodeType": "Identifier",
+                    "code": "ida2cpg_return_val",
+                    "attributes": {
+                      "ea": "4361",
+                      "treeindex": "-1"
+                    },
+                    "name": "ida2cpg_return_val",
+                    "type": "void *"
+                  },
+                  "right": {
+                    "nodeType": "Number",
+                    "code": "0",
+                    "attributes": {
+                      "ea": "4356",
+                      "treeindex": "2"
+                    },
+                    "value": "0"
+                  }
+                }
+              },
+              {
+                "nodeType": "Return",
+                "code": "return ida2cpg_return_val;",
+                "attributes": {
+                  "ea": "4361",
+                  "treeindex": "-1"
+                },
+                "expr": {
+                  "nodeType": "Identifier",
+                  "code": "ida2cpg_return_val",
+                  "attributes": {
+                    "ea": "4361",
+                    "treeindex": "-1"
+                  },
+                  "name": "ida2cpg_return_val",
+                  "type": "void *"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "returnType": "int"
+  }
+,
