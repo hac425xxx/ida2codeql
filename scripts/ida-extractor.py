@@ -30,7 +30,7 @@ class AnalyseThread(threading.Thread):
             print(p.stdout.read())
 
         if p.stderr:
-            print(p.stderr.read())
+            print(p.stderr.read().decode())
 
     def run(self):
         while True:

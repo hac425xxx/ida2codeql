@@ -786,7 +786,7 @@ class AstWalkDumper:
             print("stack: {}".format(citem_to_str(x)))
 
     def walk_func(self, ea: int):
-        fname = idaapi.get_name(ea)
+        fname = idaapi.get_name(ea).strip(".")
         self.function_name = fname
         try:
             self.cfunc = idaapi.decompile(ea)
@@ -1060,11 +1060,19 @@ class AstWalkDumper:
     def walk_obj_expr(self, e: idaapi.cexpr_t):
         obj = e.obj_ea
         n = idaapi.get_name(obj).strip(".")
-
         tf: idaapi.tinfo_t = idaapi.tinfo_t()
         idaapi.get_tinfo(tf, obj)
         typ = tf.dstr()
-        r = AstNode.createIdentifierNode(e, n, typ)
+        if typ == "?":
+            typ = "Int"
+
+        s: bytes = idc.get_strlit_contents(obj)
+        if idaapi.get_func(obj):
+            r = AstNode.createIdentifierNode(e, n, typ)
+        elif s:
+            r = AstNode.createStringNode(e, s.decode())
+        else:
+            r = AstNode.createIdentifierNode(e, n, typ)
         return r
 
     def walk_str_expr(self, e: idaapi.cexpr_t):
@@ -1249,8 +1257,8 @@ class AstWalkDumper:
 def skip_function(ea):
     n = idaapi.get_name(ea)
 
-    if n.startswith("."):
-        return True
+    # if n.startswith("."):
+    #     return True
 
     seg = idc.get_segm_name(ea)
     if seg in ["extern", ".plt"]:
@@ -1348,7 +1356,7 @@ def merge_json_file(type_file, helper_type_json_file):
 
     shutil.move(out, type_file)
 
-    print("[*] merge {}? to {}".format(type_file, out))
+    print("[*] merge {} to {}".format(type_file, out))
 
 
 # https://gist.github.com/NyaMisty/693db2ce2e75c230f36b628fd7610852
@@ -1445,9 +1453,6 @@ if __name__ == "__main__":
     merge_json_files(outdir, base_name, helper_json)
 
     for x in idautils.Structs():
-        print(x)
-        # for m in idautils.StructMembers(x[1]):
-        #     print(m)
 
         n = x[2]
         sid = x[1]

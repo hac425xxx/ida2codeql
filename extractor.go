@@ -837,6 +837,10 @@ func extractExpr(tw *trap.Writer, expr gjson.Result, parent trap.Label, idx int,
 			dbscheme.UsesTable.Emit(tw, lbl, objlbl)
 		}
 
+	case "String":
+		value := expr.Get("value").String()
+		kind = dbscheme.GetHexrayExprKind(nodeType)
+		dbscheme.LiteralsTable.Emit(tw, lbl, value, value)
 	case "MemberPtr":
 		kind = dbscheme.GetHexrayExprKind(nodeType)
 		extractExpr(tw, expr.Get("base"), lbl, 0, false)

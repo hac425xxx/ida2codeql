@@ -643,6 +643,7 @@ var HexrayExprKinds = map[string]int{
 
 	"ArrayIndexAccess": EXPR_KIND_INDEXEXPR,
 	"LabelIdent":       EXPR_KIND_IDENT,
+	"String":           EXPR_KIND_STRINGLIT,
 }
 
 func GetHexrayExprKind(e string) int {

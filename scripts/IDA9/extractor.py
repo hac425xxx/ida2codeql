@@ -820,7 +820,7 @@ class AstWalkDumper:
             print("stack: {}".format(citem_to_str(x)))
 
     def walk_func(self, ea: int):
-        fname = idaapi.get_name(ea)
+        fname = idaapi.get_name(ea).strip(".")
         self.function_name = fname
         try:
             self.cfunc = idaapi.decompile(ea)
@@ -1097,7 +1097,16 @@ class AstWalkDumper:
         tf: idaapi.tinfo_t = idaapi.tinfo_t()
         idaapi.get_tinfo(tf, obj)
         typ = tf.dstr()
-        r = AstNode.createIdentifierNode(e, n, typ)
+        if typ == "?":
+            typ = "Int"
+
+        s: bytes = idc.get_strlit_contents(obj)
+        if idaapi.get_func(obj):
+            r = AstNode.createIdentifierNode(e, n, typ)
+        elif s:
+            r = AstNode.createStringNode(e, s.decode())
+        else:
+            r = AstNode.createIdentifierNode(e, n, typ)
         return r
 
     def walk_str_expr(self, e: idaapi.cexpr_t):
@@ -1282,8 +1291,8 @@ class AstWalkDumper:
 def skip_function(ea):
     n = idaapi.get_name(ea)
 
-    if n.startswith("."):
-        return True
+    # if n.startswith("."):
+    #     return True
 
     seg = idc.get_segm_name(ea)
     if seg in ["extern", ".plt"]:
